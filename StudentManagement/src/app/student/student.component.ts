@@ -15,6 +15,7 @@ export class StudentComponent implements OnInit {
   public gridColumnApi;
   searchtext: any;
    public update:any;
+   public text:any;
 
 
   
