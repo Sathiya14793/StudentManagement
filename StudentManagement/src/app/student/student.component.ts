@@ -16,6 +16,7 @@ export class StudentComponent implements OnInit {
   searchtext: any;
 public update:any;
 
+
   
   constructor(private dialog: MatDialog) {
     this.columnDefs = [
