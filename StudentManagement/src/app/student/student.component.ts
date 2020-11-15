@@ -16,6 +16,7 @@ export class StudentComponent implements OnInit {
   searchtext: any;
 
   
+  
   constructor(private dialog: MatDialog) {
     this.columnDefs = [
       { field: 'Id', sortable: true, resizable: true, cellStyle: { color: 'blue', 'cursor': 'pointer' } },
