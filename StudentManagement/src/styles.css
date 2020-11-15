@@ -3,29 +3,32 @@
 @import "../node_modules/ag-grid-community/dist/styles/ag-grid.css";
 @import "../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-.angpop {
-    overflow: hidden !important;
-  }
-  .angpop form {
-    width: 100%;
-    margin: 0px;
-  }
-  .pop600px {
-    max-width: 600px !important;
-  }
-  .headerdetailcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 5px;
-  }
-  .alert-box .mat-mini-fab .mat-button-wrapper {
-    padding: 0 !important;
-  }
 
-  .mat-snack-bar-container {
-    background: transparent !important;
-    box-shadow: none !important;
-  }
   .warning{
     color:orange;
   }
+  .popup mat-form-field{
+    width: 100%;
+  }
+  .popup mat-form-field .mat-form-field-wrapper{
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+  }
+  .apptitleholder{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .apptitle{
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f51b5;
+    border-radius: 3px;
+    padding: 3px;
+    color: #ffffff;
+    height: 30px;
+  }
+  

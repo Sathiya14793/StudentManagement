@@ -35,7 +35,7 @@ export class StudentDialogComponent implements OnInit {
       this.Name = this.data.data.Name;
       this.Age = this.data.data.Age;
       this.Address = this.data.data.Address;
-      this.Contact = this.data.data.Contact;
+      this.Contact = String(this.data.data.Contact);
     }
   }
   SaveStudentData() {
@@ -56,6 +56,11 @@ export class StudentDialogComponent implements OnInit {
     }
     else if (this.Contact == "") {
       this.errormsg="Please enter Contact !!";
+      this.value="warning";
+      return;
+    }
+    else if(this.Contact.length!=10){
+      this.errormsg="Please enter 10 digit contact number !!";
       this.value="warning";
       return;
     }
