@@ -14,6 +14,8 @@ export class StudentComponent implements OnInit {
   public gridApi;
   public gridColumnApi;
   searchtext: any;
+
+  
   constructor(private dialog: MatDialog) {
     this.columnDefs = [
       { field: 'Id', sortable: true, resizable: true, cellStyle: { color: 'blue', 'cursor': 'pointer' } },
