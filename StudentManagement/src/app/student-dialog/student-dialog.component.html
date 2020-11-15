@@ -1,0 +1,113 @@
+
+<!-- <mat-dialog-content class="mat-typography angpop pop600px">
+  <form [formGroup]="StudentDialogForm" novalidate class="angforms">
+    <div fxFlex="100" fxLayout="row" class="headerdetailcontainer modalpopcustom">
+      <div fxFlex="100" fxLayout="row" class="headerdetailcontainer popheader">
+        <h3 mat-dialog-title class="poptitle">{{status}} Student</h3>
+        <h3 mat-dialog-title class="closepop" (click)="close()">X</h3>
+      </div>
+      <div fxFlex="100" fxLayout="row" class="headerdetailcontainer popcontent">
+        <div fxFlex="0 0 calc(100% - 4px)" fxFlex.lg="0 0 calc(100% - 4px)" fxFlex.md="0 0 calc(100% - 4px)"
+          fxFlex.sm="0 0 calc(50% - 4px)" fxFlex.xs="0 0 calc(100% - 4px)" class="headerfield">
+          <mat-form-field class="heightformfield" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="Name" maxlength="128" autocomplete="off"
+              placeholder="Please enter the  Name" required>
+
+            <mat-error *ngIf="StudentDialogForm.get('Name').hasError('required')">
+              <i matTooltip="Name is Required" style="padding:3px;cursor: pointer;" class="material-icons">error</i>
+            </mat-error>
+          </mat-form-field>
+
+        </div>
+        <div fxFlex="0 0 calc(100% - 4px)" fxFlex.lg="0 0 calc(100% - 4px)" fxFlex.md="0 0 calc(100% - 4px)"
+        fxFlex.sm="0 0 calc(50% - 4px)" fxFlex.xs="0 0 calc(100% - 4px)" class="headerfield">
+        <mat-form-field class="heightformfield" appearance="outline">
+          <mat-label>Age</mat-label>
+          <input matInput type="text" formControlName="Age" maxlength="128" autocomplete="off"
+            placeholder="Please enter the Age" required>
+
+          <mat-error *ngIf="StudentDialogForm.get('Age').hasError('required')">
+            <i matTooltip="Age is Required" style="padding:3px;cursor: pointer;" class="material-icons">error</i>
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+        <div fxFlex="0 0 calc(50% - 4px)" fxFlex.lg="0 0 calc(50% - 4px)" fxFlex.md="0 0 calc(50% - 4px)"
+          fxFlex.sm="0 0 calc(50% - 4px)" fxFlex.xs="0 0 calc(100% - 4px)" class="headerfield">
+
+          <mat-form-field class="heightformfield" appearance="outline">
+            <mat-label>Address</mat-label>
+            <textarea matInput type="text" formControlName="Address" maxlength="128" autocomplete="off"
+              placeholder="Please enter the Address" required></textarea> 
+  
+            <mat-error *ngIf="StudentDialogForm.get('Address').hasError('required')">
+              <i matTooltip="Address is Required" style="padding:3px;cursor: pointer;" class="material-icons">error</i>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="0 0 calc(100% - 4px)" fxFlex.lg="0 0 calc(100% - 4px)" fxFlex.md="0 0 calc(100% - 4px)"
+        fxFlex.sm="0 0 calc(50% - 4px)" fxFlex.xs="0 0 calc(100% - 4px)" class="headerfield">
+        <mat-form-field class="heightformfield" appearance="outline">
+          <mat-label>Contact</mat-label>
+          <input matInput type="text" formControlName="Contact" maxlength="128" autocomplete="off"
+            placeholder="Please enter the Contact" required>
+
+          <mat-error *ngIf="StudentDialogForm.get('Contact').hasError('required')">
+            <i matTooltip="Contact is Required" style="padding:3px;cursor: pointer;" class="material-icons">error</i>
+          </mat-error>
+        </mat-form-field>
+
+      </div>
+
+      </div>
+      <div fxFlex="100" fxLayout="row" class="headerdetailcontainer popfooter">
+        <button type="submit" mat-raised-button (click)="SaveStudentData()" [disabled]="StudentDialogForm.invalid" class="popsave">
+          <mat-icon>save</mat-icon>
+          <span> {{status}}</span>
+        </button>&nbsp;
+        <button mat-raised-button (click)="close()" class="popcancel" type="button">
+          <mat-icon>cancel</mat-icon> Cancel
+        </button>
+
+      </div>
+
+    </div>
+  </form>
+</mat-dialog-content> -->
+
+<h1 mat-dialog-title> {{status}} Student</h1>
+<div mat-dialog-content>
+  <div>
+	<mat-form-field>
+		<mat-label>Name</mat-label>
+		<input matInput (keypress)="removespcialcharactersandnumbers($event)" [(ngModel)]="Name">
+  </mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <mat-label>Age</mat-label>
+  <input matInput (keypress)="onlyintegers($event)" maxlength="2" [(ngModel)]="Age">
+</mat-form-field>
+</div>
+	
+<div>
+  <mat-form-field>
+    <mat-label>Address</mat-label>
+    <input matInput [(ngModel)]="Address">
+</mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <mat-label>Contact</mat-label>
+  <input matInput (keypress)="onlyintegers($event)" maxlength="10" [(ngModel)]="Contact">
+</mat-form-field>
+</div>
+</div>
+<div [ngClass]="{'warning': value === 'warning', 'error':value === 'error', 'success':value === 'success' }">{{errormsg}}</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="Close()">Cancel</button>
+  <button mat-button (click)="SaveStudentData()">Save</button>
+	<!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+</div>
