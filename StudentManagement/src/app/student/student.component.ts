@@ -14,8 +14,8 @@ export class StudentComponent implements OnInit {
   public gridApi;
   public gridColumnApi;
   searchtext: any;
+public update:any;
 
-  
   
   constructor(private dialog: MatDialog) {
     this.columnDefs = [
